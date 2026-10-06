@@ -1,0 +1,55 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Signals — Nitesh Sir FA Team GNG</title><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css?v=14">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+Devanagari:wght@400;500&display=swap" rel="stylesheet"></head>
+<body data-lang="both">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<div id="loader" aria-hidden="true"><div class="loader-bg"></div><div class="loader-scrim"></div>
+<div class="loader-inner"><div class="loader-mark">Nitesh Sir <em>FA Team GNG</em></div>
+<div class="loader-sub">Signal Lab · Class 10</div>
+<div class="loader-bar"><span id="loadfill"></span></div>
+<div class="loader-count"><span id="loadnum">00</span> / 100</div></div></div>
+<noscript><style>#loader{display:none}</style></noscript>
+<header class="top"><div class="top-in">
+<a class="brand" href="index.html" aria-label="Nitesh Sir FA Team GNG — Signal Lab, home"><span class="brand-name">Nitesh Sir <em>FA Team GNG</em></span><small class="brand-sub">Signal Lab · Class 10</small></a>
+<button class="menu-btn" id="menubtn" aria-expanded="false" aria-controls="menupanel"><span class="menu-lines" aria-hidden="true"><span></span><span></span></span><span class="menu-word">Menu</span></button>
+</div>
+<div class="menupanel" id="menupanel"><nav class="pages" aria-label="Primary"><a href="index.html"><span class="navnum">01</span><span>Intro</span></a><a href="analog-digital.html"><span class="navnum">02</span><span>Signals</span></a><a href="lab.html"><span class="navnum">03</span><span>Lab</span></a><a href="binary.html"><span class="navnum">04</span><span>Binary</span></a><a href="converters.html"><span class="navnum">05</span><span>ADC·DAC</span></a><a href="transmission.html"><span class="navnum">06</span><span>Transmit</span></a><a href="quiz.html"><span class="navnum">07</span><span>Quiz</span></a><a href="exam.html"><span class="navnum">08</span><span>Exam</span></a></nav>
+<div class="menu-tools"><div class="searchwrap"><input id="sin" type="search" placeholder="search…" aria-label="Search"><div id="sdrop"></div></div>
+<div class="lang"><button data-l="en">EN</button><button data-l="both" class="on">EN+NE</button><button data-l="ne">NE</button></div></div>
+</div></header>
+<div class="wrap" id="main-content">
+<div class="panel"><span class="fig">FIG.02 — ANALOG</span><h2>Analog: the smooth one <span class="thin">〰</span></h2>
+<div class="grid2"><div>
+<div class="en"><b>Changes continuously.</b> Any value inside the range is allowed — not just two steps. Drawn as a smooth sine wave. Think natural voice, old radio.</div>
+<div class="ne">समयसँग <b>लगातार परिवर्तन</b> हुन्छ। range भित्र जुनसुकै मान हुन सक्छ। smooth sine wave मा देखाइन्छ — जस्तै प्राकृतिक आवाज।</div>
+<div class="stickers"><span class="st go">CONTINUOUS</span><span class="st">PEAK = top (+V)</span><span class="st">VALLEY = bottom (−V)</span><span class="st">AMPLITUDE = height = strength</span></div>
+<p class="small">Zero line in the middle. Above = positive voltage, below = negative. Bigger swing = louder / stronger.</p>
+</div><div class="darkbox"><canvas id="anaScope"></canvas><p class="small" style="color:#b9bd9c">PEAK / VALLEY / AMPLITUDE / TIME — all on one wave.</p></div></div></div>
+
+<div class="panel"><span class="fig">FIG.03 — DIGITAL</span><h2>Digital: the stepped one <span class="thin">▓</span></h2>
+<div class="en"><b>Fixed levels only.</b> Usually two: HIGH = 1, LOW = 0. Waveform is square steps, not smooth. That's what computers eat.</div>
+<div class="ne">मान <b>fixed/discrete</b> मात्र — HIGH = 1, LOW = 0। Wave square-step हुन्छ। कम्प्युटरले यही बुझ्छ।</div>
+<div class="bulbring"><div style="text-align:center"><div class="bulb" id="bulb">💡</div><div id="bstate" style="font-family:var(--mono);font-size:13px;margin-top:8px">OFF — LOW / 0 · 0V</div><canvas id="bulbScope" style="width:180px;height:60px;margin-top:8px"></canvas></div>
+<div><b>Try it: the switch</b><p class="small" style="color:#b9bd9c">थिच्नुहोस् — बत्ती, भोल्टेज, binary, wave सबै सँगै बदलिन्छ।</p><button class="sw" id="sw" role="switch" aria-checked="false" aria-label="Toggle"></button><p style="font-family:var(--mono);font-size:13px">OFF = 0V = 0 · ON = 5V = 1</p></div></div></div>
+
+<div class="panel"><span class="fig">FIG.04 — HEAD TO HEAD</span><h2>Knob vs switch</h2>
+<div class="grid2">
+<div class="darkbox">ANALOG — dimmer / volume knob<canvas id="cmpA"></canvas><p class="small" style="color:#b9bd9c">बिस्तारै घुम्छ — continuous change.</p></div>
+<div class="darkbox">DIGITAL — wall switch<canvas id="cmpD"></canvas><p class="small" style="color:#b9bd9c">कि बल्छ कि निभ्छ — discrete levels.</p></div>
+</div>
+<div style="overflow:auto;margin-top:12px"><table>
+<tr><th>#</th><th>Analog</th><th>Digital</th></tr>
+<tr><td>Meaning</td><td>Continuously varying / लगातार</td><td>Discrete levels, usually 0/1</td></tr>
+<tr><td>Values</td><td>Infinite in range</td><td>Two: HIGH / LOW</td></tr>
+<tr><td>Wave</td><td>Smooth sine 〰</td><td>Square steps ▓</td></tr>
+<tr><td>Noise</td><td>Distorts directly — damage sticks</td><td>Regenerable — errors detectable/fixable</td></tr>
+<tr><td>Store / process</td><td>Hard (tape), analog circuits</td><td>Easy (files), computers</td></tr>
+<tr><td>Examples</td><td>Voice, old radio/phone</td><td>PC, phone, MP3, digital TV</td></tr>
+<tr><td>Convert</td><td>→ digital needs ADC</td><td>→ analog needs DAC</td></tr>
+</table></div>
+<p><a class="btn solid" href="lab.html">Touch the waves in the Lab →</a></p></div>
+</div>
+<footer><b>NITESH SIR FA TEAM GNG</b> · smooth vs stepped — that's 50% of the exam.</footer>
+<script src="app.js?v=19"></script></body></html>

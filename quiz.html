@@ -1,0 +1,85 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quiz — Nitesh Sir FA Team GNG</title><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css?v=14">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+Devanagari:wght@400;500&display=swap" rel="stylesheet"></head>
+<body data-lang="both">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<div id="loader" aria-hidden="true"><div class="loader-bg"></div><div class="loader-scrim"></div>
+<div class="loader-inner"><div class="loader-mark">Nitesh Sir <em>FA Team GNG</em></div>
+<div class="loader-sub">Signal Lab · Class 10</div>
+<div class="loader-bar"><span id="loadfill"></span></div>
+<div class="loader-count"><span id="loadnum">00</span> / 100</div></div></div>
+<noscript><style>#loader{display:none}</style></noscript>
+<header class="top"><div class="top-in">
+<a class="brand" href="index.html" aria-label="Nitesh Sir FA Team GNG — Signal Lab, home"><span class="brand-name">Nitesh Sir <em>FA Team GNG</em></span><small class="brand-sub">Signal Lab · Class 10</small></a>
+<button class="menu-btn" id="menubtn" aria-expanded="false" aria-controls="menupanel"><span class="menu-lines" aria-hidden="true"><span></span><span></span></span><span class="menu-word">Menu</span></button>
+</div>
+<div class="menupanel" id="menupanel"><nav class="pages" aria-label="Primary"><a href="index.html"><span class="navnum">01</span><span>Intro</span></a><a href="analog-digital.html"><span class="navnum">02</span><span>Signals</span></a><a href="lab.html"><span class="navnum">03</span><span>Lab</span></a><a href="binary.html"><span class="navnum">04</span><span>Binary</span></a><a href="converters.html"><span class="navnum">05</span><span>ADC·DAC</span></a><a href="transmission.html"><span class="navnum">06</span><span>Transmit</span></a><a href="quiz.html"><span class="navnum">07</span><span>Quiz</span></a><a href="exam.html"><span class="navnum">08</span><span>Exam</span></a></nav>
+<div class="menu-tools"><div class="searchwrap"><input id="sin" type="search" placeholder="search…" aria-label="Search"><div id="sdrop"></div></div>
+<div class="lang"><button data-l="en">EN</button><button data-l="both" class="on">EN+NE</button><button data-l="ne">NE</button></div></div>
+</div></header>
+<div id="story">
+<div class="story-screen on" id="panel-start"><div class="story-inner">
+<span class="eyebrow">Fig.16 — Battle mode</span>
+<h1>Let the battle begin.</h1>
+<p class="story-sub">10 rounds. Answer to advance. Retry until correct.</p>
+<p><button type="button" class="btn" id="startbtn">Start</button></p>
+<p><a class="story-escape" href="#qbox">Practice the 20 instead ↓</a></p>
+</div></div>
+<div class="story-screen" id="stage-video" hidden>
+<video id="clip" playsinline muted preload="none" aria-label="Story video clip"></video>
+<div class="clip-ui"><span id="roundlabel">INTRO</span><button type="button" id="mutebtn" aria-label="Toggle sound">Sound off</button></div>
+<button type="button" id="bigplay" hidden aria-label="Play clip">▶ Play</button>
+<button type="button" id="clipfallback" hidden>Clip unavailable. Tap to continue.</button>
+</div>
+<div class="story-screen" id="qmodal" hidden><div class="story-inner">
+<div role="dialog" aria-modal="true" aria-labelledby="qtext" class="qdialog">
+<span class="eyebrow" id="qeyebrow">Question 1</span>
+<h3 id="qtext" tabindex="-1"></h3>
+<div id="qopts"></div>
+<div id="qwhy" role="status"></div>
+</div></div></div>
+<div class="story-screen" id="panel-victory" hidden><div class="story-inner">
+<span class="eyebrow">Mission complete</span>
+<h2>You did it.</h2>
+<div class="final-score" id="finalscore">10 / 10</div>
+<p class="story-sub" id="finaltime"></p>
+<div id="reviewwrap" hidden><span class="eyebrow">Review these</span><div id="reviewlist"></div></div>
+<p class="btnrow"><button type="button" class="btn" id="againbtn">Play again</button> <a class="btn" href="index.html">Back to home</a></p>
+</div></div>
+<div id="round-live" class="sr-only" aria-live="polite"></div>
+</div>
+<div class="wrap" id="main-content">
+<div class="panel quiz-head"><span class="fig">FIG.12 — NO BLUFFING</span><h2>20 MCQs</h2>
+<p class="small">Tap an option. You get stamped on the spot — green means correct, red means retry. Explanation opens instantly.</p>
+<div class="hud" id="hud"><div class="hud-row"><span id="hcount">0 / 20 answered</span><button id="sndbtn" type="button" class="opt" style="width:auto;display:inline-block;margin:0;padding:4px 12px;font-family:var(--mono);font-size:12px;font-weight:800" title="Toggle answer sounds">🔊 ON</button><span id="hscore">0 right · streak 0</span></div>
+<div class="bar"><div class="bar-fill" id="hfill" style="width:0%"></div></div></div>
+<div id="qbox"></div>
+<div class="quiz-foot"><button class="btn light" id="retry" type="button">Reset all</button>
+<button class="btn solid" id="check" type="button">Reveal unfinished</button>
+<span id="score" role="status"></span></div></div>
+<div id="toast" role="status"></div>
+<div class="panel"><span class="fig">FIG.13 — POCKET CARDS</span><h2>12 flashcards</h2><div class="flashgrid" id="fgrid"></div>
+<p><a class="btn solid" href="exam.html">Final boss: Exam page →</a></p></div>
+</div>
+<footer><b>NITESH SIR FA TEAM GNG</b> · 90%+ or retry.</footer>
+<script>
+addEventListener('error',function(e){
+ var w=document.querySelector('.wrap');if(!w||document.getElementById('boot'))return;
+ var d=document.createElement('div');d.id='boot';d.className='panel';d.style.borderColor='#ff4d1c';
+ d.innerHTML='<b>JS error spotted:</b> '+(e.message||'a script failed to run')+' — screenshot this and report it.';
+ w.prepend(d);
+},true);
+</script>
+<script src="app.js?v=19"></script>
+<noscript><div class="panel"><b>Quiz needs JavaScript.</b> Please enable it and reload.</div></noscript>
+<script>
+addEventListener('load',()=>setTimeout(()=>{
+ if(!document.querySelector('#qbox .q')){
+  const d=document.createElement('div');d.className='panel';
+  d.innerHTML='<b>Quiz didn\u2019t boot.</b> Your browser is holding an old cached app.js. Hard-refresh with <b>Ctrl+Shift+R</b> (Cmd+Shift+R on Mac), then reopen this page.';
+  document.querySelector('.wrap').prepend(d);
+ }
+},600));
+</script></body></html>
