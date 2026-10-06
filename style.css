@@ -61,8 +61,10 @@ nav.pages a.on{color:var(--text)}
 .menu-btn:hover .menu-lines span{background:var(--accent)}
 body.menu-open .menu-lines span:first-child{transform:translateY(3.5px) rotate(45deg)}
 body.menu-open .menu-lines span:last-child{transform:translateY(-3.5px) rotate(-45deg)}
-.menupanel{position:fixed;top:72px;left:0;right:0;z-index:110;background:rgba(0,0,0,0.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--divider);padding:var(--space-6) var(--space-4) var(--space-5);opacity:0;visibility:hidden;transform:translateY(-12px);transition:opacity var(--dur-base) var(--ease),transform var(--dur-base) var(--ease),visibility var(--dur-base)}
+.menupanel{position:fixed;top:0;right:0;bottom:0;z-index:110;width:min(430px,92vw);background:rgba(0,0,0,0.97);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-left:1px solid var(--divider);padding:96px var(--space-5) var(--space-5);overflow-y:auto;opacity:0;visibility:hidden;transform:translateX(100%);transition:opacity var(--dur-base) var(--ease),transform var(--dur-base) var(--ease),visibility var(--dur-base)}
 body.menu-open .menupanel{opacity:1;visibility:visible;transform:none}
+#scrim{position:fixed;inset:0;z-index:105;background:rgba(0,0,0,0.6);opacity:0;visibility:hidden;transition:opacity var(--dur-base) var(--ease),visibility var(--dur-base)}
+body.menu-open #scrim{opacity:1;visibility:visible}
 .menupanel nav.pages{display:grid;gap:2px;max-width:1120px;margin:0 auto;overflow:visible}
 .menupanel nav.pages a{display:flex;align-items:baseline;gap:var(--space-3);font-family:var(--serif);font-weight:300;font-size:clamp(24px,3vw,34px);letter-spacing:-0.01em;text-transform:none;color:var(--text-dim);padding:8px 2px;opacity:0;transform:translateY(14px);transition:opacity var(--dur-base) var(--ease),transform var(--dur-base) var(--ease),color var(--dur-fast) var(--ease)}
 body.menu-open .menupanel nav.pages a{opacity:1;transform:none}
@@ -79,6 +81,7 @@ body.menu-open .menupanel nav.pages a:nth-child(8){transition-delay:320ms}
 .menupanel nav.pages a.on{color:var(--text)}
 .menupanel .navnum{font-family:var(--mono);font-size:11px;letter-spacing:0.14em;color:var(--accent)}
 .menu-tools{max-width:1120px;margin:var(--space-4) auto 0;display:flex;gap:var(--space-5);align-items:center;flex-wrap:wrap;border-top:1px solid var(--divider);padding-top:var(--space-4)}
+.menupanel .menu-tools{flex-direction:column;align-items:stretch;max-width:none}
 .menu-tools .searchwrap{flex:1;min-width:220px}
 .menu-tools .searchwrap input{width:100%;font-size:15px;padding:10px 2px}
 .searchwrap{position:relative}
@@ -436,7 +439,7 @@ canvas.screen{transition:clip-path 900ms var(--ease)}
 @page{margin:1.5cm;}
 @media print{
  body{background:#fff!important;color:#111!important;background-image:none!important;}
- .top,.top-in,nav.pages,.tools,.searchwrap,#sdrop,.lang,.ticker,footer,.progress-meter,.progress-line,.hud,#toast,#loader,#scrollbar,#chapter-tag,.menupanel,.menu-btn,#story{display:none!important;}
+ .top,.top-in,nav.pages,.tools,.searchwrap,#sdrop,.lang,.ticker,footer,.progress-meter,.progress-line,.hud,#toast,#loader,#scrollbar,#chapter-tag,.menupanel,.menu-btn,#story,#scrim{display:none!important;}
  .wrap{max-width:none!important;padding:0!important;margin:0!important;}
  .panel,.q,.cardx,.path-card,.callout{background:#fff!important;color:#111!important;border:1px solid #999!important;box-shadow:none!important;break-inside:avoid;}
  .q button,.btn,.dbtn,.dots,.donebtn{display:none!important;}

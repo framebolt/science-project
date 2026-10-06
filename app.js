@@ -304,11 +304,14 @@ try{
 (function(){
  const btn=document.getElementById('menubtn'),panel=document.getElementById('menupanel');
  if(!btn||!panel)return;
+ const scrim=document.createElement('div');scrim.id='scrim';scrim.setAttribute('aria-hidden','true');
+ document.body.appendChild(scrim);
  const set=(open)=>{document.body.classList.toggle('menu-open',open);btn.setAttribute('aria-expanded',String(open));
   const word=btn.querySelector('.menu-word');if(word)word.textContent=open?'Close':'Menu';
   if(open){const f=panel.querySelector('nav.pages a');if(f)f.focus();}};
  btn.addEventListener('click',()=>set(!document.body.classList.contains('menu-open')));
  panel.addEventListener('click',e=>{if(e.target.closest('nav.pages a'))set(false);});
+ scrim.addEventListener('click',()=>set(false));
  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.body.classList.contains('menu-open')){set(false);btn.focus();}});
 })();
 // ---- UNCOVER: split headlines, card spotlight ----
